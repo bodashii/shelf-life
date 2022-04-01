@@ -1,3 +1,5 @@
-DROP DATABASE IF EXISTS 
+DROP DATABASE IF EXISTS shelf_life_db;
 
-CREATE DATABASE 
+CREATE DATABASE shelf_life_db;
+
+-- name can change?
