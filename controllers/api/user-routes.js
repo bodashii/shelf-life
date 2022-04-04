@@ -6,8 +6,6 @@ const { User, Post, Star } = require('../../models');
 // endpoint to get all users
 router.get('/', (req, res) => {
     User.findAll({
-        // when getting all users, Post and Star will be included
-        include: [Post, Star],
         attributes: { exclude : ['password'] }
     })
     .then (dbUserData => {
@@ -55,9 +53,35 @@ router.post('/', (req, res) => {
     })
 });
 
+//login 
+router.post('/login', (req, res) => {
+    User.findOne({
+        where: {
+            email: req.body.email
+        }
+    })
+    .then(dbUserData => {
+        if (!dbUserData) {
+            
+        }
+    })
+})
+
+// update
 router.put('/:id', (req, res) => {
 
 });
+
+//log out
+router.post('/logout', (req, res) => {
+    if (req.session.loggedIn) {
+        req.session.destroy(() => {
+            res.status(204).end();
+        });
+    } else {
+        res.status(404).end();
+    }
+})
 
 router.delete('/:id', (req, res) => {
     User.destroy(req.params.id)
