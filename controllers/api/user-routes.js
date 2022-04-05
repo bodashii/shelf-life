@@ -1,8 +1,9 @@
 const router = require('express').Router();
-const { User, Post, Star } = require('../../models');
+const { User, Post, Star, Comment } = require('../../models');
 
 // this is /api/users endpoint
 
+// this WORKS
 // endpoint to get all users
 router.get('/', (req, res) => {
     User.findAll({
@@ -19,12 +20,33 @@ router.get('/', (req, res) => {
     });
 });
 
+// this WORKS sorta
 router.get('/:id', (req, res) => {
     User.findOne({
         attributes: { exclude: ['password'] },
         where: {
             id: req.params.id
-        }
+        },
+        include: [
+            {
+                model: Post,
+                attributes: ['id', 'title', 'post_url', 'created_at']
+            },
+            {
+                model: Comment,
+                attributes: ['id', 'comment_text', 'created_at'],
+                include: {
+                    model: Post,
+                    attributes: ['title']
+                }
+            },
+            {
+                model: Post,
+                attributes: ['title'],
+                through: Vote,
+                as: 'voted_posts'
+            }
+        ],
     })
     .then (dbUserData => {
         if (!dbUserData) {
@@ -40,20 +62,31 @@ router.get('/:id', (req, res) => {
 });
 
 // CREATE a user 
+// this works for now, the req.session.save will be when the front end is up and running
 router.post('/', (req, res) => {
+    // from the form submit, will call on these 
     User.create({
         username: req.body.username,
         email: req.body.email,
         password: req.body.password
     })
-    .then(dbUserData => res.status(200).json(dbUserData))
+    // .then(dbUserData => res.status(200).json(dbUserData))
+    .then(dbUserData => {
+        req.session.save(() => {
+            req.session.user_id = dbUserData.id;
+            req.session.username = dbUserData.username;
+            req.session.loggedIn = true;
+            res.status(200).json(dbUserData);
+        })
+    })
     .catch(err => {
         console.log(err);
         res.status(500).json(err);
     })
 });
 
-//login 
+//login
+// Cannot read properties of undefined (reading 'save') when trying to login with Insomnia
 router.post('/login', (req, res) => {
     User.findOne({
         where: {
@@ -62,8 +95,23 @@ router.post('/login', (req, res) => {
     })
     .then(dbUserData => {
         if (!dbUserData) {
-            
+            res.status(400).json({ message: 'No user with that email address!' });
+            return;
         }
+
+        const validPassword = dbUserData.checkPassword(req.body.password);
+        if (!validPassword) {
+            res.status(400).json({ message: 'Invalid password!' });
+            return;
+        }
+
+        req.session.save(() => {
+            //declare session variables
+            req.session.user_id = dbUserData.id;
+            req.session.username = dbUserData.username;
+            req.session.loggedIn = true;
+            res.json({ user: dbUserData, message: 'You are now logged in!' });
+        });
     })
 })
 
@@ -81,7 +129,7 @@ router.post('/logout', (req, res) => {
     } else {
         res.status(404).end();
     }
-})
+});
 
 router.delete('/:id', (req, res) => {
     User.destroy(req.params.id)
