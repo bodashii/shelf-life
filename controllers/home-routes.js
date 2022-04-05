@@ -23,3 +23,5 @@ router.get('/post/:id', (req, res) => {
     // };
     // res.render('single-post', {post} )
 })
+
+module.exports = router;

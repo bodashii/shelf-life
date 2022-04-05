@@ -34,10 +34,10 @@ const hbs = exphbs.create({});
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
-app.use(routes);
+
 //login
 app.use(session(sess));
-
+app.use(routes);
 
 // turn on connection to db and server
 // when 'true', DROP TABLE IF EXISTS happens, false will not 

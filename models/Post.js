@@ -11,16 +11,13 @@ Post.init(
             primaryKey: true,
             autoIncrement: true
         },
-        post_text: {
+        post_url: {
             type: DataTypes.STRING,
             allowNull: false,
             validate: {
-                len: [4]
+            isURL: true
             }
         },
-        // book_choice: {
-
-        // },
         title: {
             type: DataTypes.STRING,
             allowNull: false

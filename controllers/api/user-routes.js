@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User, Post, Star, Comment } = require('../../models');
+const { User, Post, Comment } = require('../../models');
 
 // this is /api/users endpoint
 
@@ -20,7 +20,7 @@ router.get('/', (req, res) => {
     });
 });
 
-// this WORKS sorta
+// this WORKS and tested in Insomnia
 router.get('/:id', (req, res) => {
     User.findOne({
         attributes: { exclude: ['password'] },
@@ -39,12 +39,6 @@ router.get('/:id', (req, res) => {
                     model: Post,
                     attributes: ['title']
                 }
-            },
-            {
-                model: Post,
-                attributes: ['title'],
-                through: Vote,
-                as: 'voted_posts'
             }
         ],
     })
@@ -62,7 +56,7 @@ router.get('/:id', (req, res) => {
 });
 
 // CREATE a user 
-// this works for now, the req.session.save will be when the front end is up and running
+// this WORKS, tested logging in with Insomnia and checked Headers > Cookies to show persistence 
 router.post('/', (req, res) => {
     // from the form submit, will call on these 
     User.create({
@@ -85,8 +79,8 @@ router.post('/', (req, res) => {
     })
 });
 
-//login
-// Cannot read properties of undefined (reading 'save') when trying to login with Insomnia
+// POST /api/users/login
+// fixed! 
 router.post('/login', (req, res) => {
     User.findOne({
         where: {
@@ -94,6 +88,7 @@ router.post('/login', (req, res) => {
         }
     })
     .then(dbUserData => {
+        // console.log(req.session)
         if (!dbUserData) {
             res.status(400).json({ message: 'No user with that email address!' });
             return;
@@ -120,7 +115,7 @@ router.put('/:id', (req, res) => {
 
 });
 
-//log out
+// log out
 router.post('/logout', (req, res) => {
     if (req.session.loggedIn) {
         req.session.destroy(() => {
@@ -131,14 +126,19 @@ router.post('/logout', (req, res) => {
     }
 });
 
+// THIS WORKS, don't touch for now
 router.delete('/:id', (req, res) => {
-    User.destroy(req.params.id)
+    User.destroy({
+        where: {
+            id: req.params.id
+        }
+    })
     .then(dbUserData => {
         if (!dbUserData) {
             res.status(404).json({ message: 'User not found' });
             return;
         }
-        res.json(dbUserData);
+        res.status(200).json(dbUserData);
     })
     .catch(err => {
         console.log(err);
