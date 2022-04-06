@@ -1,13 +1,13 @@
 const router = require('express').Router();
-// const sequelize = require('../../config/connection');
-const { Post, User, Comment } = require('../../models');
+const sequelize = require('../../config/connection');
+const { Post, User, Comment, Star } = require('../../models');
 
 // GET all posts with this end point
 router.get('/', (req, res) => {
     console.log('======================');
     Post.findAll({
       // Query configuration
-        attributes: ['id', 'post_url', 'title', 'created_at'],
+        attributes: ['id', 'post_url', 'title', 'created_at', [sequelize.literal('(SELECT COUNT(*) FROM star WHERE post.id = star.post_id)'), 'star_count']],
         order: [['created_at', 'DESC']],
         include: [
             {
@@ -68,6 +68,8 @@ router.get('/:id/', (req, res) => {
 
 // POST, lets you create POST with the title, post_url, user_id
 router.post('/', (req, res) => {
+    // must be logged in to create a post with req.session
+    if (req.session) {
     Post.create({
         title: req.body.title,
         post_url: req.body.post_url,
@@ -78,6 +80,21 @@ router.post('/', (req, res) => {
             console.log(err);
             res.status(500).json(err);
         });
+    }
+});
+
+// PUT /api/posts/star
+router.put('/star', (req, res) => {
+    // make sure the session exists first
+    if (req.session) {
+        // pass session id along with all destructured properties on req.body
+        Post.star({ ...req.body, user_id: req.session.user_id }, { Star, Comment, User })
+        .then(updatedStarData => res.json(updatedStarData))
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        });
+    }
 });
 
 // DELETE a post from the given id param
