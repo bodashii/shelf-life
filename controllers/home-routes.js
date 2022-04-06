@@ -41,7 +41,7 @@ router.get('/post/:id', async (req, res) => {
         if (postData) {
             const post = postData.get({ plain: true });
 
-            res.render('single-post', { post });
+            res.render('../views/single-post', { post });
         } else {
             res.status(404).end();
         }
@@ -50,28 +50,28 @@ router.get('/post/:id', async (req, res) => {
     }
 });
 
-// checks if the user is logged in, then will be redirected to homepage
+// checks if the user is logged in, 
 router.get('/login', (req, res) => {
-    if (req.session.loggedIn) {
-        res.redirect('/');
-        return;
-    }
+    // if (req.session.loggedIn) {
+        res.redirect('../views/all-posts.handlebars');
+        // return;
+    // }
 
-    // handlebars name should be this 'login'
+    
     // unless we choose another name, then we change it here
-    res.render('login');
+    res.render('all-posts');
 });
 
-// checks if the user is logged in, then will be redirected to homepage
+// checks if the user is logged in, 
 router.get('/signup', (req, res) => {
     if (req.session.loggedIn) {
-        res.redirect('/');
+        res.redirect('../views/all-posts.handlebars');
         return;
     }
 
-    // handlebars name should be this 'signup'
+
     // unless we choose another name, then we change it here
-    res.render('signup');
+    res.render('all-posts');
 });
 
 module.exports = router;

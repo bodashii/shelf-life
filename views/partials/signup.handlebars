@@ -1,6 +1,6 @@
 
-
-  {{!-- <div class="field">
+{{!-- 
+  <div class="field">
       <h3>Sign up!</h3>
     <label class="label">Email</label>
     <div class="field-body">
@@ -38,48 +38,48 @@
         <h1 class="title is-1">Sign Up</h1>
     </section>
 
-    <form class="box">
+    <div class="box">
         <div class="field">
             <label class="label" for="firstName">Name</label>
             <div class="control">
-                <input class="input" type="text" placeholder="First Name">
+                <input class="input" type="text" placeholder="First Name" id="firstName">
             </div>
         </div>
 
         <div class="field">
             <label class="label" for="lastName"></label>
             <div class="control">
-                <input class="input" type="text" placeholder="Last Name">
+                <input class="input" type="text" placeholder="Last Name" id="lastName">
             </div>
         </div>
 
         <div class="field">
             <label class="label" for="username">Username</label>
             <div class="control">
-                <input class="input" type="text" placeholder="Merlin's Owl">
+                <input class="input" type="text" placeholder="Merlin's Owl" id="username">
             </div>
         </div>
 
         <div class="field">
             <label class="label" for="username">Email</label>
             <div class="control">
-                <input class="input" type="email" placeholder="thewiz@archimedes.com">
+                <input class="input" type="email" placeholder="thewiz@archimedes.com" id="email">
             </div>
         </div>
 
         <div class="field">
             <label class="label" for="username">Password</label>
             <div class="control">
-                <input class="input" type="password" placeholder="...must be unique">
+                <input class="input" type="password" placeholder="...must be unique" id="password">
             </div>
         </div>
 
         <div class="field">
             <label class="label" for="username">Age</label>
             <div class="control">
-                <input class="input" type="number" placeholder="for your safety">
+                <input class="input" type="number" placeholder="for your safety" id="age">
             </div>
         </div>
-        <button class="button is-medium is-primary" onclick="signUpHandler()">Sign Up</button> 
+        <button class="button is-medium is-primary" onclick="() => signUpHandler">Sign Up</button> 
 
-      </form>
+    </div>

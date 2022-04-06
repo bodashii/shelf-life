@@ -60,9 +60,12 @@ router.get('/:id', (req, res) => {
 router.post('/', (req, res) => {
     // from the form submit, will call on these 
     User.create({
+        firstName: req.body.firstName,
+        lastName: req.body.lastName,
         username: req.body.username,
         email: req.body.email,
-        password: req.body.password
+        password: req.body.password,
+        age: req.body.age,
     })
     // .then(dbUserData => res.status(200).json(dbUserData))
     .then(dbUserData => {

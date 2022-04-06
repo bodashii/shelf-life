@@ -1,20 +1,34 @@
 {{!-- dumby data, that gets redirected aftering signing up --}}
 
-<ol class="post-list">
-    {{#each posts as |post|}}
-    <li>
-        <article class="post">
-        <div class="title">
-            <a href="{{post_url}}" target="_blank">{{title}}</a>
-            <span>({{post_url}})</span>
+
+
+<div class="modal">
+        <div class="modal-background">
+            <div class="modal-card">
+                <header class="modal-card-head">
+                    <p class="modal-card-title">What will you share?</p>
+                    <button class="delete" aria-label="close"></button>
+                </header>
+                <section class="modal-card-body">
+                    <!-- cool stuff here -->
+                    <form class="box">
+                        <div class="field">
+                            <label class="label" for="postTitle">Post Title</label>
+                            <div class="control">
+                                <input class="input" type="text" placeholder="Subject">
+                            </div>
+                        </div>
+
+                        <div class="field">
+                            <label class="label" for="postContent"></label>
+                            <input class="textarea" type="text" placeholder="Once upon a time...">
+                        </div>
+                    </form>
+                </section>
+                <footer class="modal-card-foot">
+                    <button class="button is-success">Post</button>
+                    <button class="button">Nevermind</button>
+                </footer>
+            </div>
         </div>
-        <div class="meta">
-            {{post.star_count}} point(s) by {{post.user.username}} on
-            {{post.created_at}}
-            |
-            <a href="/post/{{post.id}}">{{post.comments.length}} comment(s)</a>
-        </div>
-        </article>
-    </li>
-    {{/each}}
-</ol>
+    </div>

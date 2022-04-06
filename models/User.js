@@ -21,6 +21,14 @@ User.init(
             // turn on auto increment
             autoIncrement: true
         },
+        firstName: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        lastName: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
         username: {
             type: DataTypes.STRING,
             allowNull: false
@@ -41,6 +49,10 @@ User.init(
             len: [4]
             }
         },
+        age: {
+            type: DataTypes.INTEGER,
+            allowNull: false
+        }
     },
     {
         hooks: {
