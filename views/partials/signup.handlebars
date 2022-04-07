@@ -1,44 +1,42 @@
+<header>
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a href="#">
+        <figure class="image is-128x128 has">
+          <img class="image" src="/images/sl-logo.jpg" >
+        </figure>
+      </a>
 
-
-  {{!-- <div class="field">
-      <h3>Sign up!</h3>
-    <label class="label">Email</label>
-    <div class="field-body">
-      <div class="field">
-        <p class="control">
-          <input type="email" name="email" class="input is-medium" id="email" required>
-        </p>
-      </div>
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target=""></a>
     </div>
-  </div>
-  <div class="field">
-    <label class="label">Username</label>
-    <div class="field-body">
-      <div class="field">
-        <p class="control">
-          <input type="email" name="email" class="input is-medium" id="username" required>
-        </p>
-      </div>
+
+
+  </nav>
+</header>
+{{!-- cta --}}
+<section class="section container">
+  <div class="columns">
+    <div class="column">
+      {{!-- login form --}}
+      <form class="box" action="">
+        <h2 class="title content">Login</h2>
+        <div class="field">
+          <label class="label" for="email">Email</label>  
+            <input class="input" type="email">
+        </div>
+
+        <div class="field">
+          <label class="label" for="email">Password</label>  
+            <input class="input" type="password">
+        </div>
+
+        <button class="button is-primary">Login</button>
+      </form>
     </div>
-  </div>
-  <div class="field">
-    <label class="label">Password</label>
-    <div class="field-body">
-      <div class="field">
-        <p class="control">
-          <input type="password" name="email" class="input is-medium" id="password" required>
-        </p>
-      </div>
-    </div>
-  </div>
-  <button class="button is-medium is-primary" onclick="signUpHandler()">Sign Up</button> --}}
 
-
-<section class="section">
-        <h1 class="title is-1">Sign Up</h1>
-    </section>
-
-    <form class="box">
+    <div class="column">
+       <form class="box">
+         <h2 class="title content">Sign Up</h2>
         <div class="field">
             <label class="label" for="firstName">Name</label>
             <div class="control">
@@ -83,3 +81,13 @@
         <button class="button is-medium is-primary" onclick="signUpHandler()">Sign Up</button> 
 
       </form>
+    </div>
+
+  </div>
+</section>
+
+{{!-- <section class="section">
+        <h1 class="title is-1">Sign Up</h1>
+    </section>
+
+    --}}
