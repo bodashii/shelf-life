@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
     <link rel="stylesheet" href="/public/stylesheets/style.css">
     <title>Shelf Life | Homepage</title>
+    <link rel="icon" type="image/x-icon" href="./images/favicon-16x16.png">
   </head>
   <body>
     <section class="hero is-primary is-small">
@@ -54,10 +55,11 @@
     </section>
     <p class="title is-3 has-text-centered mt-2"></p>
     <p class="subtitle is-5 m-2"></p>
-    <div class="tile is-ancestor">
-      <div class="tile is-vertical is-8">
+    <div class="tile is-ancestor is-flex-direction-column" style="align-items: center;">
+      <div class="tile is-8">
         <div class="tile">
-          <div class="tile is-parent is-vertical m-2">
+          <div class="is-flex-direction-row">
+          <div class="tile is-parent m-2">
             <article class="tile is-child notification is-warning">
               <p class="title">Your Posts</p>
               <p class="subtitle">Share what you've been reading!</p>
@@ -82,7 +84,6 @@
                           <p class="subtitle is-6">@user_name</p>
                         </div>
                       </div>
-                  
                       <div class="content">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                         Phasellus nec iaculis mauris. <a>@bulmaio</a>.
@@ -124,20 +125,23 @@
                   </div>
                 </section>
               </article>
+              <button class="js-modal-trigger button is-primary is-small is-pulled-right" data-target="modal-js-example">
+                Create a Post
+              </button>
             </article>
             </div>
-            <div class="tile is-parent m-2">
+            <div class="tile is-parent m-1">
               <article class="tile is-child notification is-info">
-                <p class="title">Middle tile</p>
-                <p class="subtitle">With an image</p>
+                <p class="title">Discover</p>
+                <p class="subtitle">Suggestions and new favorites!</p>
                 <figure class="image is-4by3">
-                  <img src="https://bulma.io/images/placeholders/640x480.png">
+                  <img src="./images/metal_shelves.png">
                 </figure>
               </article>
             </div>
           </div>
-          <div class="tile is-ancestor m-1">
-            <article class="tile is-parent notification is-danger is-vertical is-10 mx-5 has-text-centered">
+              <div class="is-flex-direction-row">
+            <article class="tile is-parent notification is-danger is-vertical mx-5 has-text-centered">
               <p class="title">See what others are saying</p>
               <article class="tile is-child">
               <div class="content">
@@ -221,10 +225,7 @@
                     </div>
                 </div>
               </article>
-            <button class="js-modal-trigger button is-primary" data-target="modal-js-example">
-              Create a Post
-            </button>
-        </div>
+            </article>
         <div class="tile is-parent">
           <article class="tile is-child notification is-success">
             <div class="content">
@@ -236,7 +237,10 @@
             </div>
           </article>
         </div>
+            </div>
+        </div>
       </div>
+    </div>
       <div id="modal-js-example" class="modal">
         <div class="modal-background"></div>
         <div class="modal-card">
@@ -275,6 +279,7 @@
             <button class="button">Cancel</button>
           </footer>
         </div>
+    </div>
     </div>
   </body>
   <script>
