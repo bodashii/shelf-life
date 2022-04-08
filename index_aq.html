@@ -7,35 +7,19 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
     <link rel="stylesheet" href="/public/stylesheets/style.css">
     <title>Shelf Life | Homepage</title>
-    <link rel="icon" type="image/x-icon" href="./images/favicon-16x16.png">
+    <link rel="icon" type="image/x-icon" href="./images/favicon-32x32.png">
   </head>
   <body>
     <section class="hero is-primary is-small">
-      <!-- Hero head: will stick at the top -->
-      <div class="hero-head">
-        <nav class="navbar">
-          <div class="container">
-            <div class="navbar-brand">
-              <a class="navbar-item">
-              </a>
-              <span class="navbar-burger" data-target="navbarMenuHeroA">
-                <span></span>
-                <span></span>
-                <span></span>
-              </span>
-            </div>
-          </div>
-        </nav>
-      </div>
       
       <!-- Hero content: will be in the middle -->
-      <div class="hero-body m-auto" style="max-height: fit-content;">
+      <div class="hero-body" style="max-height: fit-content;">
         <div class="container has-text-centered">
           <figure class="image-is-centered" alt="logo-image">
-            <img src="./images/shelflifelogo.png" style="max-height: 15vw; min-height: 10vw; max-width: 15vw; min-width: 10vw;">
+            <img src="./images/shelflifelogo.png" style="max-height: 5vw; min-height: 33px; max-width: 5vw; min-width: 50px;">
           </figure>
-          <p class="title has-text-centered">Welcome to Shelf Life!</p>
-          <p class="subtitle has-text-centered">Take a look around, see what's new, and update your friends.</p>
+          <p class="title has-text-centered is-3">Welcome to Shelf Life!</p>
+          <p class="subtitle has-text-centered is-5">Take a look around, see what's new, and update your friends.</p>
         </div>
       </div>
     
@@ -55,17 +39,15 @@
     </section>
     <p class="title is-3 has-text-centered mt-2"></p>
     <p class="subtitle is-5 m-2"></p>
-    <div class="tile is-ancestor is-flex-direction-column" style="align-items: center;">
-      <div class="tile is-8">
-        <div class="tile">
-          <div class="is-flex-direction-row">
-          <div class="tile is-parent m-2">
-            <article class="tile is-child notification is-warning">
+    <div class="tile is-ancestor" style="align-items: center;">
+      <div class="tile">
+          <div class="tile is-parent m-1">
+            <article class="tile is-child notification is-warning" style="max-width:450px; max-height:600px;min-height:600px;">
               <p class="title">Your Posts</p>
               <p class="subtitle">Share what you've been reading!</p>
               <article class="columns">
                 <section class="column">
-                  <div class="box" style="overflow-y:auto;max-height:20vw;min-height:250px;">
+                  <div class="box" style="overflow-y:auto;width:100%;height:450px;">
                   <h1><div class="card">
                     <div class="card-image">
                       <figure class="image is-4by3">
@@ -131,101 +113,80 @@
             </article>
             </div>
             <div class="tile is-parent m-1">
-              <article class="tile is-child notification is-info">
-                <p class="title">Discover</p>
-                <p class="subtitle">Suggestions and new favorites!</p>
-                <figure class="image is-4by3">
-                  <img src="./images/metal_shelves.png">
-                </figure>
-              </article>
-            </div>
-          </div>
-              <div class="is-flex-direction-row">
-            <article class="tile is-parent notification is-danger is-vertical mx-5 has-text-centered">
-              <p class="title">See what others are saying</p>
-              <article class="tile is-child">
-              <div class="content">
-                <div class="box mx-1">
-                    <article class="media">
-                      <div class="media-left">
-                        <figure class="image is-64x64 m-0">
-                          <img src="https://bulma.io/images/placeholders/128x128.png" alt="Image">
-                        </figure>
-                      </div>
-                      <div class="media-content">
-                        <div class="content">
-                          <p>
-                            <strong>Book Title</strong> <small>@user_name</small> <small>31m</small>
-                            <br>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean efficitur sit amet massa fringilla egestas. Nullam condimentum luctus turpis.
-                          </p>
-                        </div>
-                        <nav class="level is-mobile">
-                          <div class="level-left">
-                            <a class="level-item" aria-label="reply">
-                              <span class="icon is-small">
-                                <i class="fas fa-reply" aria-hidden="true"></i>
-                              </span>
-                            </a>
-                            <a class="level-item" aria-label="retweet">
-                              <span class="icon is-small">
-                                <i class="fas fa-retweet" aria-hidden="true"></i>
-                              </span>
-                            </a>
-                            <a class="level-item" aria-label="like">
-                              <span class="icon is-small">
-                                <i class="fas fa-heart" aria-hidden="true"></i>
-                              </span>
-                            </a>
-                          </div>
-                        </nav>
-                      </div>
-                    </article>
-                  </div>
-              </div>
-            </article>
-            <article class="tile is-child">
-                <div class="content">
-                  <div class="box mx-1">
-                      <article class="media">
+              <article class="tile is-child notification is-info" style="max-width:60vw;min-width:auto; max-height:600px">
+            <p class="title">See what others are saying</p>
+              <article class="columns">
+                <section class="column">
+                  <div class="box" style="overflow-y:auto;width:95%;height:450px;">
+                  <h1><div class="card">
+                    <div class="card-image">
+                      <figure class="image is-4by3">
+                        <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+                      </figure>
+                    </div>
+                    <div class="card-content">
+                      <div class="media">
                         <div class="media-left">
-                          <figure class="image is-64x64 m-0">
-                            <img src="https://bulma.io/images/placeholders/128x128.png" alt="Image">
+                          <figure class="image is-32x32">
+                            <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
                           </figure>
                         </div>
                         <div class="media-content">
-                          <div class="content">
-                            <p>
-                              <strong>Book Title</strong> <small>@user_name</small> <small>31m</small>
-                              <br>
-                              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean efficitur sit amet massa fringilla egestas. Nullam condimentum luctus turpis.
-                            </p>
-                          </div>
-                          <nav class="level is-mobile">
-                            <div class="level-left">
-                              <a class="level-item" aria-label="reply">
-                                <span class="icon is-small">
-                                  <i class="fas fa-reply" aria-hidden="true"></i>
-                                </span>
-                              </a>
-                              <a class="level-item" aria-label="retweet">
-                                <span class="icon is-small">
-                                  <i class="fas fa-retweet" aria-hidden="true"></i>
-                                </span>
-                              </a>
-                              <a class="level-item" aria-label="like">
-                                <span class="icon is-small">
-                                  <i class="fas fa-heart" aria-hidden="true"></i>
-                                </span>
-                              </a>
-                            </div>
-                          </nav>
+                          <p class="title is-4">Book Title</p>
+                          <p class="subtitle is-6">@user_name</p>
                         </div>
-                      </article>
+                      </div>
+                      <div class="content">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Phasellus nec iaculis mauris. <a>@bulmaio</a>.
+                        <a href="#">#css</a> <a href="#">#responsive</a>
+                        <br>
+                        <time datetime="2022-1-1">11:09 PM - 1 Jan 2022</time>
+                      </div>
                     </div>
-                </div>
+                  </div></h1>
+                  <h1>Text</h1>
+                  <h1>Text</h1>
+                  <h1>Text</h1>
+                  <h1>Text</h1>
+                  <h1>Text</h1>
+                  <h1>Text</h1>
+                  <h1>Text</h1>
+                  <h1>Text</h1>
+                  <h1>Text</h1>
+                  <h1>Text</h1>
+                  <h1>Text</h1>
+                  <h1>Text</h1>
+                  <h1>Text</h1>
+                  <h1>Text</h1>
+                  <h1>Text</h1>
+                  <h1>Text</h1>
+                  <h1>Text</h1>
+                  <h1>Text</h1>
+                  <h1>Text</h1>
+                  <h1>Text</h1>
+                  <h1>Text</h1>
+                  <h1>Text</h1>
+                  <h1>Text</h1>
+                  <h1>Text</h1>
+                  <h1>Text</h1>
+                  <h1>Text</h1>
+                  <h1>Text</h1>
+                  <h1>Text</h1>
+                  <h1>Text</h1>
+                  </div>
+                </section>
               </article>
-            </article>
+              </article>
+            </div>
+              <div class="is-flex-direction-row">
+            <article class="tile is-parent notification is-danger is-vertical mx-5 has-text-centered" style="min-width: 20vw;">
+              <p class="title">Discover</p>
+                <p class="subtitle">Suggestions and new favorites!</p>
+                <figure class="image is-4by3">
+                  <img src="./images/wooden_shelves.png">
+                </figure>
+              </article>
         <div class="tile is-parent">
           <article class="tile is-child notification is-success">
             <div class="content">
@@ -239,7 +200,6 @@
         </div>
             </div>
         </div>
-      </div>
     </div>
       <div id="modal-js-example" class="modal">
         <div class="modal-background"></div>
