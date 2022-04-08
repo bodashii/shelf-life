@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.4/dist/css/bulma-carousel.min.css" />
-    <link rel="stylesheet" href="/public/stylesheets/style.css">
     <title>Shelf Life | Homepage</title>
     <link rel="icon" type="image/x-icon" href="./images/favicon-32x32.png">
   </head>
@@ -180,12 +179,91 @@
               </article>
             </div>
               <div class="is-flex-direction-row m-2" id="discover-card">
-            <article class="tile is-parent notification is-danger is-vertical m-2 has-text-centered" style="max-height:600px;min-width:45vw;">
+            <div class="tile is-parent notification is-danger is-vertical m-2 has-text-centered" style="max-height:600px;min-width:45vw;">
               <p class="title">Discover</p>
                 <p class="subtitle">Suggestions and new favorites!</p>
-                <figure class="image is-5by3">
-                  <img src="./images/wooden_shelves.png">
-                </figure>
+                <div class="box" style="max-height:600px;max-width:45vw;">
+                <section class="section">
+                  <div class="container" style="overflow-y:auto;max-height:450px;">
+                    <!-- Start Carousel -->
+                    <div id="carousel-demo" class="carousel">
+                      <div class="item-1">
+                        <!-- Slide Content -->
+                        <div class="media-left">
+                          <figure class="image is-4by3">
+                            <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
+                          </figure>
+                        </div>
+                      </div>
+                      <div class="item-2">
+                        <!-- Slide Content -->
+                        <div class="media-left">
+                          <figure class="image is-4by3">
+                            <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
+                          </figure>
+                        </div>
+                      </div>
+                      <div class="item-3">
+                        <!-- Slide Content -->
+                        <div class="media-left">
+                          <figure class="image is-4by3">
+                            <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
+                          </figure>
+                        </div>
+                      </div>
+                      <div class="item-4">
+                        <!-- Slide Content -->
+                        <div class="media-left">
+                          <figure class="image is-4by3">
+                            <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
+                          </figure>
+                        </div>
+                      </div>
+                      <div class="item-5">
+                        <!-- Slide Content -->
+                        <div class="media-left">
+                          <figure class="image is-4by3">
+                            <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
+                          </figure>
+                        </div>
+                      </div>
+                      <div class="item-6">
+                        <!-- Slide Content -->
+                        <div class="media-left">
+                          <figure class="image is-4by3">
+                            <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
+                          </figure>
+                        </div>
+                      </div>
+                      <div class="item-7">
+                        <!-- Slide Content -->
+                        <div class="media-left">
+                          <figure class="image is-4by3">
+                            <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
+                          </figure>
+                        </div>
+                      </div>
+                      <div class="item-8">
+                        <!-- Slide Content -->
+                        <div class="media-left">
+                          <figure class="image is-4by3">
+                            <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
+                          </figure>
+                        </div>
+                      </div>
+                      <div class="item-9">
+                        <!-- Slide Content -->
+                        <div class="media-left">
+                          <figure class="image is-4by3">
+                            <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
+                          </figure>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- End Carousel -->
+                  </div>
+                </section>
+                </div>
               </article>
         <div class="tile is-parent is-3 m-2">
           <article class="tile is-child notification is-success" style="max-height:600px;min-width:45vw;">
@@ -240,8 +318,15 @@
         </div>
     </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.3/dist/js/bulma-carousel.min.js"></script>
+		<script>
+		bulmaCarousel.attach('#carousel-demo', {
+			slidesToScroll: 1,
+			slidesToShow: 4
+		});
+		</script>
+    <script src="./public/js_styles/script.js"></script>
   </body>
-  <script defer src="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.4/dist/js/bulma-carousel.min.js"></script>
   <script>
       document.addEventListener('DOMContentLoaded', () => {
   // Functions to open and close a modal
