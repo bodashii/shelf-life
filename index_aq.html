@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.4/dist/css/bulma-carousel.min.css" />
     <link rel="stylesheet" href="/public/stylesheets/style.css">
     <title>Shelf Life | Homepage</title>
     <link rel="icon" type="image/x-icon" href="./images/favicon-32x32.png">
@@ -39,10 +40,9 @@
     </section>
     <p class="title is-3 has-text-centered mt-2"></p>
     <p class="subtitle is-5 m-2"></p>
-    <div class="tile is-ancestor" style="align-items: center;">
-      <div class="tile">
-          <div class="tile is-parent m-1">
-            <article class="tile is-child notification is-warning" style="max-width:450px; max-height:600px;min-height:600px;">
+    <div class="tile is-ancestor">
+          <div class="tile is-parent is-3 m-2">
+            <article class="tile is-child notification is-warning" style="max-width:450px; max-height:700px;min-height:600px;">
               <p class="title">Your Posts</p>
               <p class="subtitle">Share what you've been reading!</p>
               <article class="columns">
@@ -50,7 +50,7 @@
                   <div class="box" style="overflow-y:auto;width:100%;height:450px;">
                   <h1><div class="card">
                     <div class="card-image">
-                      <figure class="image is-4by3">
+                      <figure class="image is-128x128">
                         <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
                       </figure>
                     </div>
@@ -112,15 +112,15 @@
               </button>
             </article>
             </div>
-            <div class="tile is-parent m-1">
-              <article class="tile is-child notification is-info" style="max-width:60vw;min-width:auto; max-height:600px">
+            <div class="tile is-parent is-3 m-2">
+              <article class="tile is-child notification is-info" style="max-width:450px; max-height:700px;min-height:600px;">
             <p class="title">See what others are saying</p>
               <article class="columns">
                 <section class="column">
-                  <div class="box" style="overflow-y:auto;width:95%;height:450px;">
+                  <div class="box" style="overflow-y:auto;width:100%;height:450px;">
                   <h1><div class="card">
                     <div class="card-image">
-                      <figure class="image is-4by3">
+                      <figure class="image is-128x128">
                         <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
                       </figure>
                     </div>
@@ -179,16 +179,16 @@
               </article>
               </article>
             </div>
-              <div class="is-flex-direction-row">
-            <article class="tile is-parent notification is-danger is-vertical mx-5 has-text-centered" style="min-width: 20vw;">
+              <div class="is-flex-direction-row m-2" id="discover-card">
+            <article class="tile is-parent notification is-danger is-vertical m-2 has-text-centered" style="max-height:600px;min-width:45vw;">
               <p class="title">Discover</p>
                 <p class="subtitle">Suggestions and new favorites!</p>
-                <figure class="image is-4by3">
+                <figure class="image is-5by3">
                   <img src="./images/wooden_shelves.png">
                 </figure>
               </article>
-        <div class="tile is-parent">
-          <article class="tile is-child notification is-success">
+        <div class="tile is-parent is-3 m-2">
+          <article class="tile is-child notification is-success" style="max-height:600px;min-width:45vw;">
             <div class="content">
               <p class="title">Tall tile</p>
               <p class="subtitle">With even more content</p>
@@ -198,8 +198,7 @@
             </div>
           </article>
         </div>
-            </div>
-        </div>
+      </div>
     </div>
       <div id="modal-js-example" class="modal">
         <div class="modal-background"></div>
@@ -242,6 +241,7 @@
     </div>
     </div>
   </body>
+  <script defer src="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.4/dist/js/bulma-carousel.min.js"></script>
   <script>
       document.addEventListener('DOMContentLoaded', () => {
   // Functions to open and close a modal
