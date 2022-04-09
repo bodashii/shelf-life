@@ -1,13 +1,17 @@
 /* For Mobile */
-/* @media screen and (max-width: 37px) {
-    #discover-card {
-        width: 100%;
+@media screen and (max-width: 000px) {
+    .carousel {
+        width: 300px;
     }
-} */
+}
 
 /* For Tablets */
-/* @media screen and (min-width: 376px) and (max-width: 4000px) {
-    #discover-card {
-        width: 200%;
+@media screen and (min-width: 200px) and (max-width: 500px) {
+    .carousel {
+        width: 150px;
+        height:250px;
     }
-} */
+    .slider-navigation-next {
+        float: right;
+    }
+}
