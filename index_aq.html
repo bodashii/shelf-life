@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.4/dist/css/bulma-carousel.min.css" />
     <title>Shelf Life | Homepage</title>
-    <link rel="icon" type="image/x-icon" href="./images/favicon-32x32.png">
+    <link rel="icon" type="image/x-icon" href="./images/favicon-remix.png">
   </head>
   <body>
     <section class="hero is-primary is-small">
@@ -183,8 +183,8 @@
               <p class="title">Discover</p>
                 <p class="subtitle">Suggestions and new favorites!</p>
                 <div class="box" style="max-height:600px;max-width:45vw;">
-                <section class="section">
-                  <div class="container" style="overflow-y:auto;max-height:450px;">
+                <section class="section-carousel">
+                  <div class="container" style="overflow:hidden;max-height:450px;">
                     <!-- Start Carousel -->
                     <div id="carousel-demo" class="carousel">
                       <div class="item-1">
@@ -322,7 +322,13 @@
 		<script>
 		bulmaCarousel.attach('#carousel-demo', {
 			slidesToScroll: 1,
-			slidesToShow: 4
+			slidesToShow: 4,
+      loop: true,
+      infinite: true,
+      autoplaySpeed: 6000,
+      duration: 1000,
+      autoplay: true,
+      pauseOnHover: true
 		});
 		</script>
     <script src="./public/js_styles/script.js"></script>

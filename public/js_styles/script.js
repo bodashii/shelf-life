@@ -1,9 +1,8 @@
 // Initialize all div with carousel class
-var carousels = bulmaCarousel.attach('.carousel',
-    infinite="true",
-     loop="true",
-      autoplay="true"
-);
+var carousels = bulmaCarousel.attach('.carousel', {
+    loop: true,
+    autoplay: true
+});
 
 // Loop on each carousel initialized
 for(var i = 0; i < carousels.length; i++) {
