@@ -1,3 +1,22 @@
+
+/* For Mobile */
+@media screen and (max-width: 000px) {
+    .carousel {
+        width: 300px;
+    }
+}
+
+/* For Tablets */
+@media screen and (min-width: 200px) and (max-width: 500px) {
+    .carousel {
+        width: 150px;
+        height:250px;
+    }
+    .slider-navigation-next {
+        float: right;
+    }
+}
+
 @import "https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css";
 
 body{
@@ -27,4 +46,5 @@ section {
 .box {
     background-color: #B2B38F;
 }
+
 
