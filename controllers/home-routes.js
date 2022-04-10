@@ -5,7 +5,7 @@ const { Post, User, Comment } = require('../models');
 
 // should be homepage
 router.get('/', (req, res) => {
-    res.render('homepage')
+    res.render('login')
 })
 
 
