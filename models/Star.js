@@ -1,3 +1,5 @@
+// May not be in the MVP right away!
+
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection.js');
 
