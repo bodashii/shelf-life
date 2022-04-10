@@ -26,11 +26,11 @@
         </div>
 
         <div class="field">
-          <label class="label" for="email">Password</label>  
-            <input class="input" type="password" id="passwordLogin">
+          <label class="label" for="current-password">Password</label>  
+            <input class="input" type="password" id="current-password">
         </div>
 
-        <button class="button is-primary" onclick="() => signUpHandler">Login</button>
+        <button class="button is-primary" onclick="signUpHandler()">Login</button>
       </form>
     </div>
 
@@ -68,7 +68,7 @@
         <div class="field">
             <label class="label" for="username">Password</label>
             <div class="control">
-                <input class="input" type="password" placeholder="...must be unique" id="password">
+                <input class="input" type="password" placeholder="...must be unique" id="new-password">
             </div>
         </div>
 
@@ -85,3 +85,9 @@
 
   </div>
 </section>
+
+{{!-- <section class="section">
+        <h1 class="title is-1">Sign Up</h1>
+    </section>
+
+    --}}

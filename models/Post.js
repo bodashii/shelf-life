@@ -40,12 +40,17 @@ Post.init(
             type: DataTypes.STRING,
             allowNull: false,
             validate: {
-            isURL: true
+            isURL: true,
+            
             }
         },
         title: {
             type: DataTypes.STRING,
             allowNull: false
+        },
+        post_text: {
+            type: DataTypes.STRING,
+            allowNull: false,
         },
         user_id: {
             type: DataTypes.INTEGER,

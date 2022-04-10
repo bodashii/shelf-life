@@ -67,11 +67,12 @@ router.get('/:id/', (req, res) => {
 })
 
 // POST, lets you create POST with the title, post_url, user_id
-router.post('/', (req, res) => {
+router.post('/new_post', (req, res) => {
     // must be logged in to create a post with req.session
     if (req.session) {
     Post.create({
         title: req.body.title,
+        content: req.body.content,
         post_url: req.body.post_url,
         user_id: req.body.user_id
     })

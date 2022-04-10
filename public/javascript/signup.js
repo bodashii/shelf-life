@@ -32,6 +32,7 @@ async function signUpHandler() {
     const email = document.querySelector('#email').value.trim();
     const password = document.querySelector('#password').value.trim();
 
+
     if (username && email && password) {
         const response = await fetch('/api/users', {
             method: 'POST',
@@ -45,7 +46,8 @@ async function signUpHandler() {
         // check the response status
         if (response.ok) {
             // send them to the right page after signing up
-            document.location.replace('/posts');
+            document.location.replace('/users');
+
         } else {
             alert(response.statusText);
         }
