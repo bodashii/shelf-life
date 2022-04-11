@@ -1,0 +1,50 @@
+
+/* For Mobile */
+/* @media screen and (max-width: 000px) { */
+    /* .carousel {
+        width: 300px;
+    }
+} */
+
+/* For Tablets */
+/* @media screen and (min-width: 200px) and (max-width: 500px) {
+    .carousel {
+        width: 150px;
+        height:250px;
+    }
+    .slider-navigation-next {
+        float: right;
+    }
+} */
+
+@import "https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css";
+
+body{
+    background-color: #2E2E24;
+}
+
+section {
+    background-color: #32330E;
+}
+
+.columns {
+    background-color:#2E2E24 ;
+}
+
+
+.title{
+    color: #B8BA41;
+    background-color: black;
+    padding: 0.5em;
+    border-radius: 0.5rem
+}
+
+.navbar {
+    background-color: #272740;
+}
+
+.box {
+    background-color: #B2B38F;
+}
+
+

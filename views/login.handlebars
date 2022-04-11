@@ -1,0 +1,52 @@
+<section class="section container">
+  <div class="columns">
+    <div class="column">
+      {{!-- login form --}}
+      <form class="box loginForm">
+        <h2 class="title content">Login</h2>
+        <div class="field">
+          <label class="label" for="emailLogin">Email</label>  
+            <input class="input" type="email" id="emailLogin">
+        </div>
+
+        <div class="field">
+          <label class="label" for="passWordLogin">Password</label>  
+            <input class="input" type="password" autocomplete="on" id="passwordLogin">
+        </div>
+
+        <button class="button is-primary" type="submit">Login</button>
+      </form>
+    </div>
+    
+    <div class="column">
+       <form class="box signUpForm">
+         <h2 class="title content">Sign Up</h2>
+        <div class="field">
+            <label class="label" for="usernameSignUp">Username</label>
+            <div class="control">
+                <input class="input" type="text" placeholder="Merlin's Owl" id="usernameSignUp">
+            </div>
+        </div>
+
+        <div class="field">
+            <label class="label" for="emailSignUp">Email</label>
+            <div class="control">
+                <input class="input" type="text" placeholder="thewiz@archimedes.com" id="emailSignUp">
+            </div>
+        </div>
+
+        <div class="field">
+            <label class="label" for="passwordSignUp">Password</label>
+            <div class="control">
+                <input class="input" type="password" placeholder="...must be unique" id="passwordSignUp">
+            </div>
+        </div>
+        <button class="button is-medium is-primary" type="submit">Sign Up</button> 
+
+      </form>
+    </div>
+
+  </div>
+</section>
+
+<script src="../public/javascript/signup.js"></script>
