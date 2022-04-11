@@ -1,20 +1,19 @@
 const express = require('express');
 const routes = require('./controllers');
-const sequelize = require('./config/connection');
+
 const path = require('path');
+const session = require('express-session');
+const exphbs = require('express-handlebars');
 
 const app = express();
 const PORT = process.env.PORT || 3001;
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-// lets us use public folder for css and js files
+
 app.use(express.static(path.join(__dirname, 'public')));
 
-// need to npm i express-session
-// npm i connect-session-sequelize
-// Express session and connects to Sequelize database
-const session = require('express-session');
+const sequelize = require('./config/connection');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 const sess = {
     secret: 'Super secret secret',
@@ -26,9 +25,9 @@ const sess = {
     })
 };
 
-// handlebars
-const exphbs = require('express-handlebars');
-const hbs = exphbs.create({});
+const helpers = require('./utils/helpers.js');
+
+const hbs = exphbs.create({ helpers});
 
 //handlebars
 app.engine('handlebars', hbs.engine);
