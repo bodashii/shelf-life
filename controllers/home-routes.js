@@ -1,11 +1,11 @@
 // This file will contain all of the user-facing routes, such as the homepage and login page.
 const router = require('express').Router();
-const sequelize = require('../config/connection.js');
+const sequelize = require('../config/connection');
 const { Post, User, Comment } = require('../models');
 
-// should be homepage
+// renders login view first
 router.get('/', (req, res) => {
-    res.render('homepage')
+    res.render('login')
 })
 
 
@@ -59,11 +59,11 @@ router.get('/login', (req, res) => {
 
     // handlebars name should be this 'login'
     // unless we choose another name, then we change it here
-    res.render('login');
+    res.render('/homepage/');
 });
 
 // checks if the user is logged in, then will be redirected to homepage
-router.get('/signup', (req, res) => {
+router.get('/login', (req, res) => {
     if (req.session.loggedIn) {
         res.redirect('/');
         return;
