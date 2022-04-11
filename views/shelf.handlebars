@@ -1,20 +1,30 @@
-{{!-- dumby data, that gets redirected aftering signing up --}}
+<section>
+    <h2>Shelf It</h2>
 
-<ol class="post-list">
-    {{#each posts as |post|}}
-    <li>
-        <article class="post">
-        <div class="title">
-            <a href="{{post_url}}" target="_blank">{{title}}</a>
-            <span>({{post_url}})</span>
+    <form>
+        <div>
+            <label for="post-title">Title</label>
+            <input type="text" id="post_title" name="post-title"/>
         </div>
-        <div class="meta">
-            {{post.star_count}} point(s) by {{post.user.username}} on
-            {{post.created_at}}
-            |
-            <a href="/post/{{post.id}}">{{post.comments.length}} comment(s)</a>
+        <div>
+            <label for="post-url">Link</label>
+            <input type="post-url" name="post-url" />
         </div>
-        </article>
-    </li>
-    {{/each}}
-</ol>
+        <button class="button is-primary" type="submit">Create</button>
+    </form>
+</section>
+
+{{#if posts.length}}
+<section>
+    <h2>Your Shelves</h2>
+    <ol>
+        {{#each posts as |post|}}
+        <li>
+            {{> post-info post}}
+            <a href="/shelf/edit/{{post.id}}" class="edit-link">edit</a>
+        </li>
+        {{/each}}
+    </ol>
+</section>
+{{/if}}
+

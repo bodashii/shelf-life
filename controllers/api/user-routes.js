@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User, Post, Comment } = require('../../models');
+const { User, Post, Comment, Star } = require('../../models');
 
 // this is /api/users endpoint
 
@@ -60,12 +60,9 @@ router.get('/:id', (req, res) => {
 router.post('/', (req, res) => {
     // from the form submit, will call on these 
     User.create({
-        first_name: req.body.first_name,
-        last_name: req.body.last_name,
         username: req.body.username,
         email: req.body.email,
-        password: req.body.password,
-        age: req.body.age
+        password: req.body.password
     })
     // .then(dbUserData => res.status(200).json(dbUserData))
     .then(dbUserData => {

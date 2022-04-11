@@ -6,7 +6,7 @@ async function loginFormHandler(event) {
 
     if (email && password) {
         const response = await fetch('/api/users/login', {
-            method: 'POST',
+            method: 'post',
             body: JSON.stringify({
                 email,
                 password
@@ -15,7 +15,7 @@ async function loginFormHandler(event) {
         })
 
         if (response.ok) {
-            document.location.replace('/homepage');
+            document.location.replace('/homepage/');
         } else {
             alert(response.statusText);
         }
@@ -24,16 +24,16 @@ async function loginFormHandler(event) {
 
 
 
-async function signUpHandler() {
+async function signUpHandler(e) {
+    e.preventDefault();
     
-    // change these id's to whatever id we have, instead of my dumbie data
-    let username = document.querySelector('#username').value.trim();
-    let email = document.querySelector('#email').value.trim();
-    let password = document.querySelector('#password').value.trim();
+    const username = document.querySelector('#usernameSignUp').value.trim();
+    const email = document.querySelector('#emailSignUp').value.trim();
+    const password = document.querySelector('#passwordSignUp').value.trim();
 
     if (username && email && password) {
         const response = await fetch('/api/users', {
-            method: 'POST',
+            method: 'post',
             body: JSON.stringify({
                 username,
                 email,
